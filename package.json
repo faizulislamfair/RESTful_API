@@ -1,0 +1,19 @@
+{
+  "name": "restful_api",
+  "version": "1.0.0",
+  "description": " RESTful API",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faizulislamfair/RESTful_API.git"
+  },
+  "author": "Faizul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faizulislamfair/RESTful_API/issues"
+  },
+  "homepage": "https://github.com/faizulislamfair/RESTful_API#readme"
+}
