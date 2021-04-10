@@ -16,3 +16,7 @@ PATCH  http://localhost:3000/products/id
 
 ### Delete a product by id
 DELETE  http://localhost:3000/products/id
+
+
+### 
+GET http://localhost:3000/abc_xyz

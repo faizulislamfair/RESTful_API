@@ -3,7 +3,8 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-    res.send('Getting a list of all products.....')
+    next(new Error("Cannot get a list of all products"))
+    // res.send('Getting a list of all products.....')
 })
 
 router.post('/', (req, res, next) => {
