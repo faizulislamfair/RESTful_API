@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/faizulislamfair/RESTful_API#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3"
   }
 }
