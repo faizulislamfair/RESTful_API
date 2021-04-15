@@ -4,6 +4,12 @@ GET http://localhost:3000/products
 ### Create a product
 
 POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "iPhone 11",
+    "price": 699
+}
 
 
 ### GET a product by id
