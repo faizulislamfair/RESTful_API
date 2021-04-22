@@ -4,9 +4,16 @@ const router = express.Router()
 
 const Product = require('../Models/Product.model')
 
-router.get('/', (req, res, next) => {
-    next(new Error("Cannot get a list of all products"))
-    // res.send('Getting a list of all products.....')
+// Get a list of all products
+router.get('/', async (req, res, next) => {
+    try {
+        const results = await Product.find({}, {__v: 0})
+        // const results = await Product.find({}, { name: 1, price: 1, _id: 0})
+        // const results = await Product.find({price: 699}, {});
+        res.send(results);
+    } catch (error) {
+        console.log(error.message)
+    }
 })
 
 
