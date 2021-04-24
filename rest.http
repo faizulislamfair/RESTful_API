@@ -9,12 +9,12 @@ Content-Type: application/json
 
 {
     "name": "Apple Watch GPS + Cellular",
-    "price": 699
+    "price": 6999
 }
 
 
 ### GET a product by id
-GET http://localhost:3000/products/id
+GET http://localhost:3000/products/6083f4d4eabaae2010e1ddbe
 
 
 ### Update a product by id
