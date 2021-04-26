@@ -14,11 +14,17 @@ Content-Type: application/json
 
 
 ### GET a product by id
-GET http://localhost:3000/products/6083f4d4eabaae2010e1ddbe
+GET http://localhost:3000/products/6077eab25cfd8c361408fe7e
 
 
 ### Update a product by id
-PATCH  http://localhost:3000/products/id
+PATCH  http://localhost:3000/products/6077eab25cfd8c361408fe7e
+Content-Type: application/json
+
+{
+    "name":"iMac 2055",
+    "price": 1555
+}
 
 
 ### Delete a product by id

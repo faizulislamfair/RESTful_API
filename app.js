@@ -6,9 +6,11 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-mongoose.connect('mongodb://localhost:27017/RestAPI', {
+mongoose
+  .connect('mongodb://localhost:27017/RestAPI', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 })
 .then(() => {
   console.log('Mongodb connected.....')
