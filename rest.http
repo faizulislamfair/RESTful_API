@@ -8,8 +8,7 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name": "Apple Watch GPS + Cellular",
-    "price": 6999
+    "name": "Apple Watch",
 }
 
 
@@ -18,20 +17,19 @@ GET http://localhost:3000/products/6077eab25cfd8c361408fe7e
 
 
 ### Update a product by id
-PATCH  http://localhost:3000/products/6077eab25cfd8c361408fe7e
+PATCH  http://localhost:3000/products/6077ed51741a681e24aa7d90
 Content-Type: application/json
 
 {
-    "name":"iMac 2055",
-    "price": 1555
+    "price": 1249
 }
 
 
 ### Delete a product by id
-DELETE  http://localhost:3000/products/6083f4d4eabaae2010e1ddbe
+DELETE  http://localhost:3000/products/6077eab25cfd8c361408fe7e
 
 
-### 
+### 404 route Not Found 
 GET http://localhost:3000/abc_xyz
 
 
