@@ -17,42 +17,33 @@ mongoose
   console.log('Mongodb connected.....')
 })
 
-app.all('/test', (req, res) => {
-    // console.log(req.query);
-    // console.log(req.query.name);
-    // res.send(req.query);
-    // console.log(req.params);
-    // res.send(req.params);
-    console.log(req.body)
-    res.send(req.body)
-})
+const ProductRoute = require('./Routes/Product.route');
+app.use('/products', ProductRoute);
 
-const ProductRoute = require('./Routes/Product.route')
-app.use('/products', ProductRoute)
-
-
-// 404 handler and pass to error handler
-
+//404 handler and pass to error handler
 app.use((req, res, next) => {
-//    const err = new Error("Not found")
-//    err.status = 404
-//    next(err)
-  next(createError(404, "Not Found"))
-})
+  /*
+  const err = new Error('Not found');
+  err.status = 404;
+  next(err);
+  */
+  // You can use the above code if your not using the http-errors module
+  next(createError(404, 'Not found'));
+});
 
-// Error Handler
-
+//Error handler
 app.use((err, req, res, next) => {
-   res.status(err.status || 500)
-   res.send({
-       error: {
-           status: err.status || 500,
-           message: err.message
-       }
-   })
-})
+  res.status(err.status || 500);
+  res.send({
+    error: {
+      status: err.status || 500,
+      message: err.message
+    }
+  });
+});
 
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, () => {
-    console.log('Server started on port 3000.....')
-})
+app.listen(PORT, () => {
+  console.log('Server started on port ' + PORT + '...');
+});
