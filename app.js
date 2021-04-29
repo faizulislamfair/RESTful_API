@@ -1,21 +1,14 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const createError = require('http-errors')
+const express = require('express');
+const createError = require('http-errors');
+const dotenv = require('dotenv').config();
 
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-mongoose
-  .connect('mongodb://localhost:27017/RestAPI', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-})
-.then(() => {
-  console.log('Mongodb connected.....')
-})
+// Initialize DB
+require('./initDB')();
 
 const ProductRoute = require('./Routes/Product.route');
 app.use('/products', ProductRoute);
@@ -45,5 +38,5 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log('Server started on port ' + PORT + '...');
+  console.log('Server started on port ' + PORT + '.....');
 });
